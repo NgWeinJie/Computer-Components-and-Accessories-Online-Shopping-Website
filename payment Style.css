@@ -1,0 +1,470 @@
+body{
+    background-color: #E0E2E4;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.logo{
+    display: block;  
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 180px;
+}
+
+h1{
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.footer{
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+hr{
+    border: 1px solid #000000;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.total{
+    margin-right: 0;
+    right: 20px;
+}
+
+.contactimg{
+    width: 40px;
+    height: 40px;
+}
+
+.cartimg{
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.accdimg{
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 45px;
+}
+
+.loginimg{
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 95px;
+}
+
+.sidenav{
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1; /*control overlapping elements’ vertical stacking order*/
+    overflow-x: hidden; /*specifies whether to clip the content*/
+    transition: 0.6s;
+    background-color: black;
+    padding-top: 10px;
+}
+
+.sidenav a , .cart a{
+    display: block;
+    transition: 0.2s;
+    color: lightgrey;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.propg{
+    color: lightgrey;
+    background-color: #000000;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border:0px;
+    outline:0px;
+}
+
+.mycart{
+    color: lightgrey;
+    background-color: #000000;
+    font-size: 26px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sidenav a:hover , .cart a:hover{
+    color: white;
+}
+
+.sidenav .closebtn {
+    cursor: pointer; /*visible and moving pointer that the user controls */
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 7px;
+    font-size: 60px;
+}
+
+.openbtn{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 45px;
+}
+
+.sidenav .fix{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 15px;
+}
+
+.cart{
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1; /*control overlapping elements’ vertical stacking order*/
+    overflow-x: hidden; /*specifies whether to clip the content*/
+    transition: 0.6s;
+    background-color: black;
+    padding-top: 10px;
+}
+
+.cart .closecart {
+    cursor: pointer; /*visible and moving pointer that the user controls */
+    position: absolute;
+    color: white;
+    top: 0;
+    right: 7px;
+    font-size: 60px;
+}
+
+.opencart{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.inputbg{
+    width: 1500px;
+    background: url(image/inputbgPay.png);
+    border-radius: 25px;
+}
+
+.Hot-Sale-DB{
+    padding: 2px;
+    width: 1500px;
+    height: 260px;
+    background: rgba(71, 133, 206, 0.5);
+    border-radius: 25px;
+}
+
+.Hot-Sale-LB{
+    padding: 2px;
+    width: 1500px;
+    height: 400px;
+    background: rgba(195, 223, 255, 0.5);
+    border-radius: 25px;
+}
+
+.fname, .lname, .phnum{
+    padding-left: 10px;
+    width: 240px;
+    height: 40px;
+    background: #F7F7F7;
+    border: 0.5px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.address{
+    padding-left: 10px;
+    background: #F7F7F7;
+    border: 0.5px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.fn, .ln, .pn, .popt, .dopt{
+    text-align: right;
+    padding: 20px;
+}
+
+.adr{
+    text-align: right;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-right: 20px;
+}
+
+input.fname, input.lname, input.phnum, textarea.address{
+    background-color: lightgrey;
+    color: #000000;
+}
+
+.sbt, .vc, .sf, .st{
+    text-align: right;
+    padding: 20px;
+}
+
+.subtotal, .sfees, .ordertotal, .refid{
+    right: 0;
+    padding-left: 10px;
+    width: 180px;
+    height: 40px;
+    background: #F7F7F7;
+    border: 0.5px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.vcode{
+    right: 0;
+    padding-left: 10px;
+    width: 100px;
+    height: 40px;
+    background: #F7F7F7;
+    border: 0.5px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+input.subtotal, input.sfees, input.ordertotal{
+    background-color: lightgrey;
+    color: #000000;
+}
+
+.paymentbtn{
+    width: 120px;
+    height: 40px;
+    font-size: 22px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #000000;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.58);
+    border-radius: 100px;
+}
+
+.paymentbtn:hover{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.paymentbutton{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 30px;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.donebtn, .orderbtn{
+    width: 80px;
+    height: 40px;
+    font-size: 22px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.58);
+    border-radius: 100px;
+}
+
+.editbtn{
+    width: 150px;
+    height: 40px;
+    font-size: 22px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.58);
+    border-radius: 100px;
+}
+
+.applybtn{
+    width: 60px;
+    height: 35px;
+    font-size: 18px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.58);
+    border-radius: 100px;
+}
+
+.donebtn:hover, .orderbtn:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.applybtn:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.editbtn:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.applybtn:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.content{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 70%; 
+}
+
+.close{
+    font-size: 60px;
+}
+
+.discamount{
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}
+
+.samerow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modify-button {
+    width: 70px;
+    height: 20px;
+    background-color: #337ab7;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.58);
+    border-radius: 100px;
+}
+
+.modify-button:hover{
+    background-color: #bdccde;
+    color: #000000;
+}
+
+.delete-button {
+    width: 70px;
+    height: 20px;
+    background-color: #b83333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.58);
+    border-radius: 100px;
+}
+
+.delete-button:hover{
+    background-color: #e8c5c5;
+    color: #000000;
+}
+
+#cart-items {
+    padding-left: 5px;
+    color: lightgrey;
+}
+
+.cartdetailstable {
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cartdetailsth,
+.cartdetailstd {
+    padding: 8px;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    border: 1px solid black;
+}
+
+.cartdetailsth {
+    background-color: #4785ce;
+    font-weight: bold;
+}
+
+.tbodyc tr:nth-child(even) {
+    background-color: #87abd6;
+}
+
+.td1:nth-child(1) {
+    width: 40%; /* Allow remaining columns to adjust automatically */
+}
+
+.td2:nth-child(2) {
+    width: 15%; /* Allow remaining columns to adjust automatically */
+}
+
+.td3:nth-child(3) {
+    width: 15%;
+}
+
+*{
+    scroll-behavior: smooth;
+}
+
+.scrollTop{
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    padding: 10px 12px;
+    background-color: #4785ce;
+    color: #FFFFFF;
+    border-radius: 100px;
+    border-radius: 1px solid #FFFFFF;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+}
+
+.scrollTop:hover{
+    background-color: #bdccde;
+    color: #000000;
+}

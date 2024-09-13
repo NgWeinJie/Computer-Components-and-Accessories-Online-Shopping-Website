@@ -1,0 +1,266 @@
+﻿body {
+    background-color: #E0E2E4;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 180px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+h2{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.footer {
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+hr {
+    border: 1px solid #000000;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contactimg {
+    width: 40px;
+    height: 40px;
+}
+
+.cartimg {
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.accdimg {
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 45px;
+}
+
+.loginimg {
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 95px;
+}
+
+.adloginimg {
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 60px;
+}
+
+.adaccdimg {
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1; /*control overlapping elements’ vertical stacking order*/
+    overflow-x: hidden; /*specifies whether to clip the content*/
+    transition: 0.6s;
+    background-color: black;
+    padding-top: 10px;
+}
+
+    .sidenav a, .cart a {
+        display: block;
+        transition: 0.2s;
+        color: lightgrey;
+        padding-left: 10px;
+        text-decoration: none;
+    }
+
+.propg {
+    color: lightgrey;
+    background-color: #000000;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 0px;
+    outline: 0px;
+}
+
+.mycart {
+    color: lightgrey;
+    background-color: #000000;
+    font-size: 26px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.puser, .padmin {
+    color: lightgrey;
+    background-color: #000000;
+    font-size: 26px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sidenav a:hover, .cart a:hover {
+    color: white;
+}
+
+.sidenav .closebtn {
+    cursor: pointer; /*visible and moving pointer that the user controls */
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 7px;
+    font-size: 60px;
+}
+
+.openbtn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 45px;
+}
+
+.sidenav .fix {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 15px;
+}
+
+.cart {
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1; /*control overlapping elements’ vertical stacking order*/
+    overflow-x: hidden; /*specifies whether to clip the content*/
+    transition: 0.6s;
+    background-color: black;
+    padding-top: 10px;
+}
+
+.cart .closecart {
+    cursor: pointer; /*visible and moving pointer that the user controls */
+    position: absolute;
+    color: white;
+    top: 0;
+    right: 7px;
+    font-size: 60px;
+}
+
+.opencart {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.paymentbtn {
+    width: 120px;
+    height: 40px;
+    font-size: 22px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #000000;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.58);
+    border-radius: 100px;
+}
+
+.paymentbtn:hover{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.paymentbutton {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 30px;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+#cart-items {
+    padding-left: 5px;
+    color: lightgrey;
+}
+
+.blank {
+    color: rgba(71, 133, 206, 0.5);
+}
+
+.history {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.historyth,
+.historytd {
+    padding: 8px;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    border: 1px solid black;
+}
+
+.historyth {
+    background-color: #4785ce;
+    font-weight: bold;
+}
+
+.tbodyh tr:nth-child(even) {
+    background-color: #87abd6;
+}
+
+.td1:nth-child(1) {
+    width: 15%; /* Allow remaining columns to adjust automatically */
+}
+
+.td2:nth-child(2) {
+    width: 40%; /* Allow remaining columns to adjust automatically */
+}
+
+.td4:nth-child(4) {
+    width: 15%;
+}
+
+.td5:nth-child(5) {
+    width: 15%;
+}
+
+.td6:nth-child(6) {
+    width: 15%;
+}

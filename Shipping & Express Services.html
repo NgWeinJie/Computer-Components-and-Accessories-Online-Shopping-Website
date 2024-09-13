@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shipping & Express Services</title>
+        
+        <link href="shipping & express services Style.css" rel="stylesheet"/>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script type="text/javascript" src="shipping & express services.js"></script>
+        <script type="text/javascript" src="AddToCart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    </head>
+    <body>
+        <a href="Home.html"><img src="image/logo.png" class="logo" alt="Shop Logo"></a>
+
+        <h1>SHIPPING & EXPRESS SERVICES</h1>
+        
+        <h3 class="ses">Frequently Asked Questions: Shipping & Express Services</h3>
+        <p class="ses">
+            Q: What are the delivery options available for my order?<br />
+            A: We offer two delivery options for your convenience, which are standard shipping and Lalamove/Grab express.<br /><br />
+            
+            Q: How much does shipping cost?<br />
+            A: Our shipping fees vary depending on your location and the weight of your order. And the Lalamove/Grab express we will follow the price on the application.<br /><br />
+          
+            Q: Can I track my order during delivery?<br />
+            A: Yes, you can track your order in real-time once it has been dispatched. We will provide you with a tracking number once your order has been shipped, which you can use to monitor your order's progress.<br /><br />
+           
+            Q: What if my order is damaged during delivery?<br />
+            A: In the unlikely event that your order is damaged during delivery, please contact our customer service team immediately. We will investigate the matter and arrange for a replacement or refund as necessary.<br /><br />
+           
+            Q: How do I change my delivery address after I have placed an order?<br />
+            A: If you need to change your delivery address after you have placed an order, please contact our customer service team as soon as possible. We will do our best to accommodate your request, but please note that we cannot guarantee that your delivery address can be changed if your order has already been dispatched.<br /><br />
+            
+            Q: What happens if my order is lost during shipping?<br />
+            A: In the rare event that your order is lost during shipping, please contact our customer service team immediately. We will initiate an investigation with the courier and work with you to find a suitable resolution.<br /><br />
+        </p>
+
+        <div class="footer">
+            <hr>
+            <h1>CONTACT US</h1>
+
+            <table>
+                <tr>
+                    <td><a href="https://wa.me/01120411400"><img src="image/cusService.png" class="contactimg"></a></td>
+                    <td><a href="https://wa.me/01120411400" style="text-decoration: none;color: black;">Monday - Friday, 9:00am - 5:30pm</a></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><a href="tel:01120411400"><img src="image/phone.png" class="contactimg"></a></td>
+                    <td><a href="tel:01120411400" style="text-decoration: none;color: black;">+6011-20411400</a></td>
+
+                    <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL"><img src="image/fb.png" class="contactimg"></a></td>
+                    <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL" style="text-decoration: none;color: black;">M-Tech</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="mailto:mtech2023inti@gmail.com"><img src="image/gmail.png" class="contactimg"></a></td>
+                    <td><a href="mailto:mtech2023inti@gmail.com" style="text-decoration: none;color: black;">mtech2023inti@gmail.com &emsp; &emsp;</a></td>
+
+                    <td><a href="https://www.instagram.com/m_tech_2023/"><img src="image/ig.png" class="contactimg"></a></td>
+                    <td><a href="https://www.instagram.com/m_tech_2023/" style="text-decoration: none;color: black;">m_tech_2023</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <span onclick="openCart()" class="opencart"><img src="image/cart.png" class="cartimg"></span>
+
+        <div id="Cart" class="cart">
+            <span onclick="closeCart()" class="closecart">&times;</span>
+
+            <p class="mycart" style="padding-top: 30px;padding-left: 5px;text-align: center;">MY CART</p>
+            <div id="cart-items" class="cart-items"></div>
+
+            <form class="paymentbutton"><br />
+                <a href="Payment.html"><input type="button" name="payment" id="payment" class="paymentbtn" value="Payment"></a>
+            </form>
+        </div>
+
+        <a href="Login.html" target="_blank"><img src="image/login.png" class="loginimg" id="loginimg"></a>
+
+        <a href="Account Details.html"><img src="image/accdetails.png" class="accdimg"></a>
+
+        <span onclick="openNav()" class="openbtn">&#9776;</span>
+
+        <div id="SideNav" class="sidenav">
+            <span onclick="closeNav()" class="closebtn">&times;</span>
+
+            <div style="padding-top: 60px;padding-left: 5px;">
+                <select name="product page" class="propg" onchange="window.location.href=this.value;">
+                    <option value="Home.html" selected>Product Category</option>
+                    <option value="Monitor.html">Monitor</option>
+                    <option value="Desktop.html">Desktop</option>
+                    <option value="Laptop.html">Laptop</option>
+                    <option value="Accessories.html">Accessories</option>
+                </select>
+            </div><br />
+
+            <a href="Hot Sales Item.html">Hot Sales Item</a><br />
+            <a href="Merdeka Sales.html">Merdeka Sales</a><br />
+            <a href="History.html">Order History</a>
+            
+            <div class="fix">
+                <a onclick="reloadPage()" id="logout">Log Out</a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Details</title>
+
+    <link href="account details Style.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="account details.js"></script>
+    <script type="text/javascript" src="AddToCart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+</head>
+    <body>
+        <a href="Home.html"><img src="image/logo.png" class="logo" alt="Shop Logo"></a>
+
+        <h1>ACCOUNT DETAILS</h1>
+
+        <div class="inputbg">
+            <div class="input">
+                <table style="padding-top: 20px;">
+                    <tr>
+                        <td class="fn">First Name: </td>
+                        <td>
+                            <form>
+                                <input type="text" id="user_fname" class="fname">
+                                <div id="fnameErr" class="error"></div>
+                            </form>
+                        </td>
+
+                        <td class="ln">Last Name: </td>
+                        <td><input type="text" id="user_lname" class="lname" disabled /></td>
+                    </tr>
+                    <tr>
+                        <td class="em">Email: </td>
+                        <td><input type="email" id="user_email" class="email" disabled /></td>
+
+                        <td class="pw">Phone Number: </td>
+                        <td>
+                            <form>
+                                <input type="text" id="user_phoneNo" class="phnum">
+                                <div id="phoneNoErr" class="error"></div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adr">Full Address: </td>
+                        <td>
+                            <form>
+                                <textarea id="user_address" class="address" cols="60" rows="5"></textarea>
+                                <div id="addressErr" class="error"></div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pc">Postcode: </td>
+                        <td>
+                            <form>
+                                <input type="text" id="user_postcode" class="postcode" />
+                                <div id="postcodeErr" class="error"></div>
+                            </form>
+                        </td>
+
+                        <td class="ct">City: </td>
+                        <td>
+                            <form>
+                                <input type="text" id="user_city" class="city" />
+                                <div id="cityErr" class="error"></div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="st">State: </td>
+                        <td><input type="text" id="user_state" class="state"/></td>
+                            
+                        <td class="cty">Country: </td>
+                        <td><input type="text" id="user_country" class="country" value="Malaysia" disabled /></td>
+                    </tr>
+                </table><br />
+
+                <form style="text-align: center;">
+                    <input type="button" name="save" id="save" class="savebtn" value="Save" onclick="saveUserData()">
+                </form><br />
+            </div>
+        </div><br>
+
+        <div class="footer">
+            <hr>
+            <h1>CONTACT US</h1>
+
+            <table>
+                <tr>
+                    <td><a href="https://wa.me/01120411400"><img src="image/cusService.png" class="contactimg"></a></td>
+                    <td><a href="https://wa.me/01120411400" style="text-decoration: none;color: black;">Monday - Friday, 9:00am - 5:30pm</a></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><a href="tel:01120411400"><img src="image/phone.png" class="contactimg"></a></td>
+                    <td><a href="tel:01120411400" style="text-decoration: none;color: black;">+6011-20411400</a></td>
+
+                    <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL"><img src="image/fb.png" class="contactimg"></a></td>
+                    <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL" style="text-decoration: none;color: black;">M-Tech</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="mailto:mtech2023inti@gmail.com"><img src="image/gmail.png" class="contactimg"></a></td>
+                    <td><a href="mailto:mtech2023inti@gmail.com" style="text-decoration: none;color: black;">mtech2023inti@gmail.com &emsp; &emsp;</a></td>
+
+                    <td><a href="https://www.instagram.com/m_tech_2023/"><img src="image/ig.png" class="contactimg"></a></td>
+                    <td><a href="https://www.instagram.com/m_tech_2023/" style="text-decoration: none;color: black;">m_tech_2023</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <span onclick="openCart()" class="opencart"><img src="image/cart.png" class="cartimg"></span>
+
+        <div id="Cart" class="cart">
+            <span onclick="closeCart()" class="closecart">&times;</span>
+
+            <p class="mycart" style="padding-top: 30px;padding-left: 5px;text-align: center;">MY CART</p>
+            <div id="cart-items" class="cart-items"></div>
+
+            <form class="paymentbutton"><br />
+                <a href="Payment.html"><input type="button" name="payment" id="payment" class="paymentbtn" value="Payment"></a>
+            </form>
+        </div>
+
+        <a href="Login.html" target="_blank"><img src="image/login.png" class="loginimg" id="loginimg"></a>
+
+        <a href="Account Details.html"><img src="image/accdetails.png" class="accdimg"></a>
+
+        <span onclick="openNav()" class="openbtn">&#9776;</span>
+        
+        <div id="SideNav" class="sidenav">
+            <span onclick="closeNav()" class="closebtn">&times;</span>
+
+            <div style="padding-top: 60px;padding-left: 5px;">
+                <select name="product page" class="propg" onchange="window.location.href=this.value;">
+                    <option value="Home.html" selected>Product Category</option>
+                    <option value="Monitor.html">Monitor</option>
+                    <option value="Desktop.html">Desktop</option>
+                    <option value="Laptop.html">Laptop</option>
+                    <option value="Accessories.html">Accessories</option>
+                </select>
+            </div><br />
+
+            <a href="Hot Sales Item.html">Hot Sales Item</a><br />
+            <a href="Merdeka Sales.html">Merdeka Sales</a><br />
+            <a href="History.html">Order History</a>
+            
+            <div class="fix">
+                <a onclick="reloadPage()" id="logout">Log Out</a>
+            </div>
+        </div>
+    </body>
+</html>

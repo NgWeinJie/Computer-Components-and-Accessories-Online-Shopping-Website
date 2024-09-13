@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hot Sales Item (Admin)</title>
+
+    <link href="hot sales item Style.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="hot sales item (admin).js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <a href="ADMIN - Home.html"><img src="image/logo.png" class="logo" alt="Shop Logo"></a>
+
+        <div class="Hot-Sale-Rec">
+            <h1 class="Hot-Sale-Word">HOT SALE ITEM!!!</h1>
+        </div><br>
+
+        <div id="product-container">
+            <table>
+                <tbody id="product-table-body" align="center"></tbody>
+            </table>
+        </div>
+
+        <a href="Login.html" target="_blank"><img src="image/login.png" class="adloginimg" id="loginimg"></a>
+
+        <a href="ADMIN - Account Details.html"><img src="image/accdetails.png" class="adaccdimg" id="accdimg"></a>
+
+        <span onclick="openNav()" class="openbtn">&#9776;</span>
+
+        <div id="SideNav" class="sidenav">
+            <span onclick="closeNav()" class="closebtn">&times;</span>
+
+            <p class="puser" style="padding-top: 30px;padding-left: 5px;">USER</p>
+            <div style="padding-left: 5px;">
+                <select name="product page" class="propg" onchange="window.location.href=this.value;">
+                    <option value="ADMIN - Home.html" selected>Product Category</option>
+                    <option value="Monitor (admin).html">Monitor</option>
+                    <option value="Desktop (admin).html">Desktop</option>
+                    <option value="Laptop (admin).html">Laptop</option>
+                    <option value="Accessories (admin).html">Accessories</option>
+                </select>
+            </div><br />
+
+            <a href="Hot Sales Item (admin).html">Hot Sales Item</a><br />
+            <a href="Merdeka Sales (admin).html">Merdeka Sales</a>
+
+            <p class="padmin" style="padding-top: 20px;padding-left: 5px;">ADMIN</p>
+            <a href="ADMIN - Add Product.html">Add Product</a><br />
+            <a href="ADMIN - Customer Order.html">Customer Order</a>
+
+            <div class="fix">
+                <a onclick="reloadPage()" id="logout">Log Out</a>
+            </div>
+        </div>
+</body>
+</html>

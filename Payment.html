@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+
+    <link href="payment Style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script type="text/javascript" src="payment.js"></script>
+    <script type="text/javascript" src="AddToCart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+</head>
+<body>
+    <a href="Home.html"><img src="image/logo.png" class="logo" alt="Shop Logo"></a>
+
+        <h1>PAYMENT</h1>
+
+        <div onclick="scrollToTop()" class="scrollTop"><i class="bi bi-arrow-up"></i></div>
+
+        <!--<div class="inputbg">-->
+            <div class="Hot-Sale-LB">
+                <table style="padding-top: 20px;">
+                    <tr>
+                        <td class="fn">First Name: </td>
+                        <td><input type="text" id="user_fname" class="fname" disabled /></td>
+
+                        <td class="ln">Last Name: </td>
+                        <td><input type="text" id="user_lname" class="lname" disabled /></td>
+                    </tr>
+                    <tr>
+                        <td class="pn">Phone Number: </td>
+                        <td><input type="text" id="user_phoneNo" class="phnum" disabled /></td>
+
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="adr">Full Address: </td>
+                        <td><textarea name="address" id="user_address" class="address" cols="60" rows="5" disabled></textarea></td>
+
+                        <td>&nbsp;</td>
+                        <td>
+                            <form>
+                                <a href="Account Details.html"><input type="button" name="edit" id="edit" class="editbtn" value="Edit Details"></a>
+                            </form><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="popt">Payment Option: </td>
+                        <td>
+                            <span id="tng" class="tng" onclick="openTng()">
+                                <input type="radio" name="paymentopt" id="paymentopt_tng" class="tng" value="Touch N Go Ewallet">
+                                <label>Touch N Go Ewallet</label>
+                            </span>
+
+                            <div class="modal" id="tngmodal">
+                                <div class="content" id="tngcontent">
+                                    <span class="close" onclick="closeTng()">&times;</span>
+                                    <h2>Touch N Go Ewallet</h2>
+                                    <table>
+                                        <tr>
+                                            <td>Please scan below QR code to make payment.</td>
+                                            <td style="padding-left: 50px;">Please upload your receipt in png, pdf, jpg or jpeg format.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><img src="image/tngqrcode.jpeg" style="width: 250px;height: 300px;"></td>
+                                            <td style="padding-left: 50px;">
+                                                <input type="file" id="payment_receipt" class="pr" accept="image/png, image/jpg, image/jpeg, image/pdf"><br /><br />
+                                                Reference ID: <input type="text" id="reference_id" class="refid">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <form style="text-align: center;">
+                                        <input type="button" name="done" id="donetng" class="donebtn" value="Done" onclick="closeTng()">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <br/>
+
+                            <span id="duitnow" class="duitnow" onclick="openDuitnow()">
+                                <input type="radio" name="paymentopt" id="paymentopt_duitnow" class="duitnow" value="Duitnow">
+                                <label>Duitnow</label>
+                            </span>
+
+                            <div class="modal" id="duitnowmodal">
+                                <div class="content" id="duitnowcontent">
+                                    <span class="close" onclick="closeDuitnow()">&times;</span>
+                                    <h2>Duitnow</h2>
+                                    <table>
+                                        <tr>
+                                            <td>Please scan below QR code to make payment.</td>
+                                            <td style="padding-left: 50px;">Please upload your receipt in png, pdf, jpg or jpeg format.</td>
+                                        <tr>
+                                            <td style="text-align: center;"><img src="image/duitnowqrcode.jpg" style="width: 250px;height: 300px;"></td>
+                                            <td style="padding-left: 50px;">
+                                                <input type="file" id="payment_receipt" class="pr" accept="image/png, image/jpg, image/jpeg, image/pdf"><br /><br />
+                                                Reference ID: <input type="text" id="reference_id" class="refid">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <form style="text-align: center;">
+                                        <input type="button" name="done" id="doneduitnow" class="donebtn" value="Done" onclick="closeDuitnow()">
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="dopt">Delivery Option: </td>
+                        <td>
+                            <input type="radio" name="deliveryopt" id="deliveryopt_shipping" class="shipping" value="Shipping" onclick="shippingfees(this.value)">
+                            <label>Shipping</label><br/>
+                        
+                            <input type="radio" name="deliveryopt" id="deliveryopt_express" class="express" value="Lalamove / grab express" onclick="shippingfees(this.value)">
+                            <label>Lalamove / grab express (penang)</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <!--</div>-->
+        
+        <table id="cartDetailsTable" class="cartdetailstable">
+            <thead>
+                <tr>
+                    <th class="cartdetailsth" style="width: 40%;">Name</th>
+                    <th class="cartdetailsth" style="width: 15%;">Price (RM)</th>
+                    <th class="cartdetailsth" style="width: 15%;">Quantity</th>
+                    <th class="cartdetailsth" style="width: 15%;">Total Price (RM)</th>
+                </tr>
+            </thead>
+            <tbody class="tbodyc"></tbody>
+        </table>
+        <br />
+
+        <div class="Hot-Sale-DB">
+            <table class="total">
+                <tr>
+                    <td class="sbt">Sub-total: </td>
+                    <td>
+                        <input type="text" id="sub_total" class="subtotal" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vc">Voucher Code: </td>
+                    <td>
+                        <form class="samerow">
+                            <input type="text" id="voucher_code" class="vcode">
+                            <input type="button" name="apply" id="apply" class="applybtn" value="Apply" onclick="countdiscount()">
+                        </form>
+                        <div id="discount_amount" class="discamount"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="sf">Shipping fees (RM): </td>
+                    <td>
+                        <input type="text" id="shipping_fees" class="sfees" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="st">Order Total: </td>
+                    <td>
+                        <input type="text" id="order_total" class="ordertotal" disabled />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+            <form style="text-align: center;">
+                <input type="button" name="order" id="order" class="orderbtn" value="Order" onclick="placeOrder()">
+            </form><br/>
+
+            <div class="footer">
+                <hr>
+                <h1>CONTACT US</h1>
+    
+                <table>
+                    <tr>
+                        <td><a href="https://wa.me/01120411400"><img src="image/cusService.png" class="contactimg"></a></td>
+                        <td><a href="https://wa.me/01120411400" style="text-decoration: none;color: black;">Monday - Friday, 9:00am - 5:30pm</a></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><a href="tel:01120411400"><img src="image/phone.png" class="contactimg"></a></td>
+                        <td><a href="tel:01120411400" style="text-decoration: none;color: black;">+6011-20411400</a></td>
+    
+                        <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL"><img src="image/fb.png" class="contactimg"></a></td>
+                        <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL" style="text-decoration: none;color: black;">M-Tech</a></td>
+                    </tr>
+    
+                    <tr>
+                        <td><a href="mailto:mtech2023inti@gmail.com"><img src="image/gmail.png" class="contactimg"></a></td>
+                        <td><a href="mailto:mtech2023inti@gmail.com" style="text-decoration: none;color: black;">mtech2023inti@gmail.com &emsp; &emsp;</a></td>
+    
+                        <td><a href="https://www.instagram.com/m_tech_2023/"><img src="image/ig.png" class="contactimg"></a></td>
+                        <td><a href="https://www.instagram.com/m_tech_2023/" style="text-decoration: none;color: black;">m_tech_2023</a></td>
+                    </tr>
+                </table>
+            </div>
+
+        <span onclick="openCart()" class="opencart"><img src="image/cart.png" class="cartimg"></span>
+
+        <div id="Cart" class="cart">
+            <span onclick="closeCart()" class="closecart">&times;</span>
+
+            <p class="mycart" style="padding-top: 30px;padding-left: 5px;text-align: center;">MY CART</p>
+            <div id="cart-items" class="cart-items"></div>
+
+            <form class="paymentbutton"><br />
+                <a href="Payment.html"><input type="button" name="payment" id="payment" class="paymentbtn" value="Payment"></a>
+            </form>
+           
+        </div>
+
+        <a href="Login.html" target="_blank"><img src="image/login.png" class="loginimg" id="loginimg"></a>
+
+        <a href="Account Details.html"><img src="image/accdetails.png" class="accdimg"></a>
+
+        <span onclick="openNav()" class="openbtn">&#9776;</span>
+
+        <div id="SideNav" class="sidenav">
+            <span onclick="closeNav()" class="closebtn">&times;</span>
+
+            <div style="padding-top: 60px;padding-left: 5px;">
+                <select name="product page" class="propg" onchange="window.location.href=this.value;">
+                    <option value="Home.html" selected>Product Category</option>
+                    <option value="Monitor.html">Monitor</option>
+                    <option value="Desktop.html">Desktop</option>
+                    <option value="Laptop.html">Laptop</option>
+                    <option value="Accessories.html">Accessories</option>
+                </select>
+            </div><br />
+
+            <a href="Hot Sales Item.html">Hot Sales Item</a><br />
+            <a href="Merdeka Sales.html">Merdeka Sales</a><br />
+            <a href="History.html">Order History</a>
+
+            <div class="fix">
+                <a onclick="reloadPage()" id="logout">Log Out</a>
+            </div>
+        </div>
+</body>
+</html>

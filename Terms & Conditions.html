@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Terms & Conditions</title>
+        
+        <link href="terms & conditions Style.css" rel="stylesheet"/>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script type="text/javascript" src="terms & conditions.js"></script>
+        <script type="text/javascript" src="AddToCart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    </head>
+    <body>
+        <a href="Home.html"><img src="image/logo.png" class="logo" alt="Shop Logo"></a>
+
+        <h1>TERMS & CONDITIONS</h1>
+        <p class="tc">
+            1. Welcome to our computer components online shopping website. By continuing to use our website, you are agreeing to our terms and conditions of use.<br /><br />
+            2. The contents of the website are for your general information and are subject to change without notice.<br /><br />
+            3. Pictures shown in this website is for illustration purpose only, kindly contact us for more details.<br /><br />
+            4. Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.<br /><br />
+            5. Product warranty covers manufacturer defects. Physical damages, unauthorised repairs or modifications to the product are excluded from the warranty. Kindly refer to product’s warranty policy for more information.<br /><br />
+            6. Returns are only accepted within 7 days if incorrect item is received or the product shows symptoms of Dead on Arrival (DOA), including hardware failure that preventing the basic operation of product upon the first use out of the box.<br /><br />
+            7. For return of products, please ensure that the original packaging is included, along with free promotional gifts in the order (if any). We may not proceed your return if the returned items of the order is incomplete.<br /><br />
+            8. Strictly no refund for items due to following general reasons: Change of mind, found other options, does not like the design, etc.<br /><br />
+            9. M-Tech reserves the rights to accept or reject any return requests.<br /><br />
+            10. For any further information, kindly contact us at the contact section below the page.<br /><br />
+
+        <div class="footer">
+            <hr>
+            <h1>CONTACT US</h1>
+
+            <table>
+                <tr>
+                    <td><a href="https://wa.me/01120411400"><img src="image/cusService.png" class="contactimg"></a></td>
+                    <td><a href="https://wa.me/01120411400" style="text-decoration: none;color: black;">Monday - Friday, 9:00am - 5:30pm</a></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><a href="tel:01120411400"><img src="image/phone.png" class="contactimg"></a></td>
+                    <td><a href="tel:01120411400" style="text-decoration: none;color: black;">+6011-20411400</a></td>
+
+                    <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL"><img src="image/fb.png" class="contactimg"></a></td>
+                    <td><a href="https://www.facebook.com/profile.php?id=100094219398735&mibextid=ZbWKwL" style="text-decoration: none;color: black;">M-Tech</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="mailto:mtech2023inti@gmail.com"><img src="image/gmail.png" class="contactimg"></a></td>
+                    <td><a href="mailto:mtech2023inti@gmail.com" style="text-decoration: none;color: black;">mtech2023inti@gmail.com &emsp; &emsp;</a></td>
+
+                    <td><a href="https://www.instagram.com/m_tech_2023/"><img src="image/ig.png" class="contactimg"></a></td>
+                    <td><a href="https://www.instagram.com/m_tech_2023/" style="text-decoration: none;color: black;">m_tech_2023</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <span onclick="openCart()" class="opencart"><img src="image/cart.png" class="cartimg"></span>
+
+        <div id="Cart" class="cart">
+            <span onclick="closeCart()" class="closecart">&times;</span>
+
+            <p class="mycart" style="padding-top: 30px;padding-left: 5px;text-align: center;">MY CART</p>
+            <div id="cart-items" class="cart-items"></div>
+
+            <form class="paymentbutton"><br />
+                <a href="Payment.html"><input type="button" name="payment" id="payment" class="paymentbtn" value="Payment"></a>
+            </form>
+        </div>
+
+        <a href="Login.html" target="_blank"><img src="image/login.png" class="loginimg" id="loginimg"></a>
+
+        <a href="Account Details.html"><img src="image/accdetails.png" class="accdimg"></a>
+
+        <span onclick="openNav()" class="openbtn">&#9776;</span>
+
+        <div id="SideNav" class="sidenav">
+            <span onclick="closeNav()" class="closebtn">&times;</span>
+
+            <div style="padding-top: 60px;padding-left: 5px;">
+                <select name="product page" class="propg" onchange="window.location.href=this.value;">
+                    <option value="Home.html" selected>Product Category</option>
+                    <option value="Monitor.html">Monitor</option>
+                    <option value="Desktop.html">Desktop</option>
+                    <option value="Laptop.html">Laptop</option>
+                    <option value="Accessories.html">Accessories</option>
+                </select>
+            </div><br />
+
+            <a href="Hot Sales Item.html">Hot Sales Item</a><br />
+            <a href="Merdeka Sales.html">Merdeka Sales</a><br />
+            <a href="History.html">Order History</a>
+
+            <div class="fix">
+                <a onclick="reloadPage()" id="logout">Log Out</a>
+            </div>
+        </div>
+    </body>
+</html>
